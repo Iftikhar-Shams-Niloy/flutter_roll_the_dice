@@ -21,18 +21,18 @@ class _DiceRollerState extends State<DiceRoller> {
   void rollTheDice() {
     _diceTimer?.cancel(); // Cancel any existing timer
     int elapsed = 0;
-    _diceTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+
+    _diceTimer = Timer.periodic(const Duration(milliseconds: 200), (timer) {
       setState(() {
-        // Cycle through dice images 1-6
         int diceNumber = (elapsed % 6) + 1;
         currentDice = 'assets/dice_images/dice$diceNumber.png';
       });
       elapsed++;
       if (elapsed >= 15) {
-        // 20 * 100ms = 2s
         timer.cancel();
-        // Show a random dice image at the end
+
         int finalDice = myRandomizer.nextInt(6) + 1;
+
         setState(() {
           currentDice = 'assets/dice_images/dice$finalDice.png';
         });
@@ -46,6 +46,7 @@ class _DiceRollerState extends State<DiceRoller> {
     super.dispose();
   }
 
+  @override
   Widget build(context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -53,12 +54,26 @@ class _DiceRollerState extends State<DiceRoller> {
         Image.asset(
           currentDice,
           width: 225,
+          height: 225,
+          fit: BoxFit.contain,
         ),
-        const SizedBox(height: 20),
-        TextButton(
-          onPressed: rollTheDice,
-          // style: TextButton.styleFrom(padding: EdgeInsets.only(top: 20)),
-          child: const StyledText('Roll The Dice'),
+        Container(
+          margin: const EdgeInsets.all(16), // 16 pixels margin on all sides
+          child: TextButton(
+            onPressed: rollTheDice,
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blue.shade900,
+              padding: const EdgeInsets.all(40),
+              shape: const CircleBorder(
+                side: BorderSide(
+                  color: Colors.white,
+                  width: 5,
+                ),
+              ),
+            ),
+            child: const StyledText('Roll\nDice'),
+          ),
         ),
       ],
     );
