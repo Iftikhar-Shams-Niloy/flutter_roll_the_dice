@@ -1,4 +1,4 @@
-<h1>Flutter Roll the Dice</h1>
+<h1>Roll the Dice</h1>
 
 <p>
   This is a beginner-level Flutter application that demonstrates the basic usage of
@@ -15,7 +15,7 @@
 
 <h2>App Preview</h2>
 <p>
-  <img src="___" alt="App Preview" />
+  <img src="rollthedice_preview.gif" alt="App Preview" width="auto" height="300"/>
 </p>
 
 <h2>Getting Started</h2>
