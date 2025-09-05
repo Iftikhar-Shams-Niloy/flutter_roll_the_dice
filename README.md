@@ -1,16 +1,51 @@
-# roll_the_dice
+<h1>Flutter Roll the Dice</h1>
 
-A new Flutter project.
+<p>
+  This is a beginner-level Flutter application that demonstrates the basic usage of
+  widgets, state management, and image rendering in Flutter.
+</p>
 
-## Getting Started
+<h2>Features</h2>
+<ul>
+  <li>Single screen interface</li>
+  <li>Displays a dice image</li>
+  <li>A "Roll" button to roll the dice</li>
+  <li>Dice image changes randomly and stops at a number</li>
+</ul>
 
-This project is a starting point for a Flutter application.
+<h2>App Preview</h2>
+<p>
+  <img src="___" alt="App Preview" />
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+<h2>Getting Started</h2>
+<p>
+  To run this project locally:
+</p>
+<ol>
+  <li>Clone the repository:</li>
+  <pre><code>git clone https://github.com/Iftikhar-Shams-Niloy/flutter_roll_the_dice.git</code></pre>
+  <li>Navigate to the project directory:</li>
+  <pre><code>cd flutter_roll_the_dice</code></pre>
+  <li>Get the dependencies:</li>
+  <pre><code>flutter pub get</code></pre>
+  <li>Run the application:</li>
+  <pre><code>flutter run</code></pre>
+</ol>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<h2>Requirements</h2>
+<ul>
+  <li>Flutter SDK installed</li>
+  <li>Dart SDK installed</li>
+  <li>An emulator or a physical device to run the app</li>
+</ul>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h2>Learning Outcome</h2>
+<p>
+  This project helps in understanding:
+</p>
+<ul>
+  <li>How to use <code>StatefulWidget</code></li>
+  <li>How to handle user interactions in Flutter</li>
+  <li>How to display and update images dynamically</li>
+</ul>
