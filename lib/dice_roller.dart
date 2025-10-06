@@ -65,7 +65,7 @@ class _DiceRollerState extends State<DiceRoller>
       CurvedAnimation(parent: _floatController, curve: Curves.easeOut),
     );
     //* set controller duration to match roll length (total ticks * period)
-    const tickMs = 355;
+    const tickMs = 345;
     const ticks = 15;
     _floatController.duration = Duration(milliseconds: tickMs * ticks);
     _floatController.forward(from: 0.0);
@@ -81,7 +81,7 @@ class _DiceRollerState extends State<DiceRoller>
 
         final int finalDice = myRandomizer.nextInt(6) + 1;
 
-        // smoothly animate controller to completion (this eases out rotation and jump)
+        //* Eases out rotation and jump)
         _floatController
             .animateTo(
               1.0,
@@ -116,13 +116,13 @@ class _DiceRollerState extends State<DiceRoller>
           width: 225,
           height: 225,
           child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 250),
+            duration: const Duration(milliseconds: 200),
             switchInCurve: Curves.bounceInOut,
             switchOutCurve: Curves.bounceIn,
             transitionBuilder: (Widget child, Animation<double> myAnimation) {
               final opacity = myAnimation;
               final scale = Tween<double>(
-                begin: 0.75,
+                begin: 0.95,
                 end: 1.0,
               ).animate(myAnimation);
               return FadeTransition(
@@ -135,6 +135,7 @@ class _DiceRollerState extends State<DiceRoller>
             },
 
             child: AnimatedBuilder(
+              key: ValueKey<String>(currentDice),
               animation: _floatController,
               builder: (context, child) {
                 final angle = _angleAnimation.value;
@@ -159,10 +160,6 @@ class _DiceRollerState extends State<DiceRoller>
               },
               child: Image.asset(
                 currentDice,
-                //*<--- trigger AnimatedSwitcher --->
-                key: ValueKey<String>(
-                  currentDice,
-                ),
                 width: 225,
                 height: 225,
                 fit: BoxFit.contain,
